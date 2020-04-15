@@ -1,0 +1,14 @@
+{
+	"hdi_covid-19-db-log-grantor": {
+		"object_owner": { 
+			"container_roles": [
+				"covid-19-db::external_access_g#"
+			]
+		},
+		"application_user": {
+			"container_roles": [
+				"covid-19-db::external_access"
+			]
+		}
+	}
+}

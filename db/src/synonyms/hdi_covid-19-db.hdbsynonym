@@ -1,0 +1,14 @@
+{
+  "CV_FeverClinicDistances": {
+    "target": {
+      "object": "CV_FeverClinicDistances",
+      "schema": "COVID_19_DB"
+    }
+  },
+  "AustralianPostcodes": {
+    "target": {
+      "object": "AustralianPostcodes",
+      "schema": "COVID_19_DB"
+    }
+  }
+}

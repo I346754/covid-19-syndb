@@ -1,0 +1,31 @@
+ID: covid-19-syndb
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: covid-19-syndb
+    type: hdb
+    path: db
+    requires:
+      - name: hdi_covid-19-syndb
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+      - name: hdi_covid-19-db
+        properties:
+          key: hdi_covid-19-db-log-grantor
+          service: '~{hdi_covid-19-db-grantor-service}'
+        group: SERVICE_REPLACEMENTS
+resources:
+  - name: hdi_covid-19-syndb
+    parameters:
+      config:
+        schema: covid_19_syndb
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: hdi_covid-19-db
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: hdi_covid-19-db
+    properties:
+      hdi_covid-19-db-grantor-service: '${service-name}'
+description: COVID-19 Synonyms Demo
